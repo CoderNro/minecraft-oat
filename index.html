@@ -1,110 +1,294 @@
 <!DOCTYPE html>
-<html>
+<html lang="vi">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cài Minecraft MTIEN</title>
+    <title>Cài Minecraft MTIEN - Phiên bản doanh nghiệp</title>
     <style>
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            max-width: 600px;
-            margin: 0 auto;
-            padding: 20px;
-            background: #f5f5f5;
-            text-align: center;
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
         .container {
             background: white;
-            border-radius: 20px;
-            padding: 30px 20px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            border-radius: 24px;
+            padding: 40px 30px;
+            max-width: 600px;
+            width: 100%;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            animation: slideUp 0.6s ease-out;
         }
-        h2 {
+        
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .logo {
+            font-size: 72px;
+            margin-bottom: 15px;
+            animation: bounce 2s infinite;
+        }
+        
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+        
+        h1 {
             color: #2c3e50;
-            margin-top: 0;
+            font-size: 32px;
+            margin-bottom: 10px;
+            font-weight: 700;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
+        
+        .version {
+            color: #7f8c8d;
+            font-size: 14px;
+            margin-bottom: 15px;
+        }
+        
         .badge {
-            background: #28a745;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
             color: white;
-            padding: 8px 16px;
-            border-radius: 20px;
-            display: inline-block;
-            margin-bottom: 20px;
-            font-weight: bold;
+            padding: 10px 20px;
+            border-radius: 25px;
+            font-weight: 600;
+            font-size: 14px;
+            box-shadow: 0 4px 15px rgba(17, 153, 142, 0.4);
+            animation: pulse 2s infinite;
         }
+        
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+        
+        .install-section {
+            margin: 30px 0;
+            text-align: center;
+        }
+        
         .install-btn {
             display: inline-block;
-            padding: 20px 40px;
-            background: #28a745;
+            padding: 18px 45px;
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
             color: white;
             text-decoration: none;
-            font-size: 28px;
-            font-weight: bold;
-            border-radius: 16px;
-            margin: 20px 0;
-            transition: 0.3s;
-            box-shadow: 0 4px 6px rgba(40,167,69,0.3);
+            font-size: 22px;
+            font-weight: 700;
+            border-radius: 50px;
+            box-shadow: 0 10px 30px rgba(245, 87, 108, 0.4);
+            transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            position: relative;
+            overflow: hidden;
         }
+        
+        .install-btn:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+            transition: left 0.5s;
+        }
+        
+        .install-btn:hover:before {
+            left: 100%;
+        }
+        
         .install-btn:hover {
-            background: #218838;
-            transform: scale(1.05);
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 15px 40px rgba(245, 87, 108, 0.6);
         }
+        
+        .install-btn:active {
+            transform: translateY(-1px) scale(1.02);
+        }
+        
         .warning {
-            background: #fff3cd;
-            color: #856404;
-            padding: 15px;
-            border-radius: 10px;
-            margin: 20px 0;
-            border-left: 5px solid #ffc107;
-            text-align: left;
-        }
-        .steps {
-            background: #e9ecef;
+            background: linear-gradient(135deg, #ffeaa7 0%, #fdcb6e 100%);
+            color: #2d3436;
             padding: 20px;
             border-radius: 16px;
+            margin: 25px 0;
+            border-left: 6px solid #e17055;
             text-align: left;
-            margin-top: 20px;
+            box-shadow: 0 5px 15px rgba(253, 203, 110, 0.3);
         }
+        
+        .warning strong {
+            color: #d63031;
+            font-size: 16px;
+        }
+        
+        .steps {
+            background: linear-gradient(135deg, #e0e7ff 0%, #cfe2ff 100%);
+            padding: 25px;
+            border-radius: 20px;
+            text-align: left;
+            margin-top: 25px;
+            border: 2px solid #a5b4fc;
+        }
+        
+        .steps h3 {
+            color: #4c51bf;
+            margin-bottom: 20px;
+            font-size: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
         .steps ol {
             margin: 0;
-            padding-left: 20px;
+            padding-left: 25px;
         }
+        
         .steps li {
-            margin: 10px 0;
+            margin: 15px 0;
+            line-height: 1.6;
+            color: #2d3748;
+            font-size: 15px;
+            padding: 10px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(79, 70, 229, 0.1);
+            transition: transform 0.2s;
+        }
+        
+        .steps li:hover {
+            transform: translateX(5px);
+            box-shadow: 0 4px 12px rgba(79, 70, 229, 0.2);
+        }
+        
+        .steps li strong {
+            color: #5a67d8;
+        }
+        
+        .footer {
+            text-align: center;
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 2px solid #e2e8f0;
+        }
+        
+        .cert-info {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+            color: #2d3748;
+            padding: 12px 20px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 600;
+            box-shadow: 0 4px 12px rgba(168, 237, 234, 0.3);
+        }
+        
+        .divider {
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #e2e8f0, transparent);
+            margin: 25px 0;
+        }
+        
+        @media (max-width: 640px) {
+            .container {
+                padding: 30px 20px;
+            }
+            
+            h1 {
+                font-size: 26px;
+            }
+            
+            .logo {
+                font-size: 60px;
+            }
+            
+            .install-btn {
+                font-size: 20px;
+                padding: 16px 35px;
+            }
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <h2>⛏️ Minecraft MTIEN</h2>
-        <div class="badge">✅ Bản doanh nghiệp - HSD: 1 năm</div>
+        <div class="header">
+            <div class="logo">⛏️</div>
+            <h1>Minecraft MTIEN</h1>
+            <p class="version">Phiên bản 1.21.131</p>
+            <div class="badge">
+                <span>✅</span>
+                <span>Bản doanh nghiệp - HSD: 1 năm</span>
+            </div>
+        </div>
         
-        <a href="itms-services://?action=download-manifest&url=https://raw.githubusercontent.com/CoderNro/minecraft-oat/refs/heads/main/manifest.plist" 
-           class="install-btn">
-           📲 CÀI ĐẶT NGAY
-        </a>
+        <div class="divider"></div>
+        
+        <div class="install-section">
+            <a href="itms-services://?action=download-manifest&url=https://raw.githubusercontent.com/CoderNro/minecraft-oat/refs/heads/main/manifest.plist" 
+               class="install-btn">
+               📲 CÀI ĐẶT NGAY
+            </a>
+        </div>
         
         <div class="warning">
-            <strong>⚠️ QUAN TRỌNG:</strong> Mở link này bằng <strong>SAFARI</strong> trên iPhone. 
-            Không dùng Facebook, Zalo, Chrome.
+            <strong>⚠️ QUAN TRỌNG:</strong> Vui lòng mở link này bằng <strong>SAFARI</strong> trên iPhone. 
+            Không sử dụng Facebook, Zalo, Chrome hoặc các trình duyệt khác.
         </div>
         
         <div class="steps">
-            <h3 style="margin-top:0; color:#2c3e50;">📋 Hướng dẫn chi tiết:</h3>
+            <h3>📋 Hướng dẫn cài đặt chi tiết</h3>
             <ol>
-                <li><strong>Bấm nút "📲 CÀI ĐẶT NGAY"</strong> phía trên</li>
-                <li>Chọn <strong>"Cài đặt"</strong> khi popup hiện ra</li>
-                <li>Về màn hình chính, <strong>đợi app tải xong</strong> (icon màu xám)</li>
-                <li>Vào <strong>Cài đặt → Cài đặt chung → VPN & Quản lý thiết bị</strong></li>
-                <li>Chọn hồ sơ <strong>"Doan Minh Tien"</strong> → Bấm <strong>"Tin cậy"</strong></li>
-                <li>Xác nhận <strong>"Tin cậy"</strong> lần nữa</li>
-                <li><strong>Mở app và chơi! 🎮</strong></li>
+                <li><strong>Bước 1:</strong> Bấm nút <strong>"📲 CÀI ĐẶT NGAY"</strong> phía trên</li>
+                <li><strong>Bước 2:</strong> Chọn <strong>"Cài đặt"</strong> khi popup xác nhận hiện ra</li>
+                <li><strong>Bước 3:</strong> Về màn hình chính và <strong>đợi app tải xong</strong> (icon sẽ màu xám)</li>
+                <li><strong>Bước 4:</strong> Vào <strong>Cài đặt → Cài đặt chung → VPN & Quản lý thiết bị</strong></li>
+                <li><strong>Bước 5:</strong> Chọn hồ sơ <strong>"Doan Minh Tien"</strong> → Bấm <strong>"Tin cậy"</strong></li>
+                <li><strong>Bước 6:</strong> Xác nhận <strong>"Tin cậy"</strong> một lần nữa</li>
+                <li><strong>Bước 7:</strong> Hoàn tất! Mở app và tận hưởng <strong>🎮</strong></li>
             </ol>
         </div>
         
-        <p style="color:#666; font-size:14px; margin-top:20px;">
-            Chứng chỉ hợp lệ đến: 2026-2027
-        </p>
+        <div class="footer">
+            <div class="cert-info">
+                <span>🔒</span>
+                <span>Chứng chỉ hợp lệ đến: 2026-2027</span>
+            </div>
+        </div>
     </div>
 </body>
 </html>
