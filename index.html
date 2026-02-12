@@ -4,26 +4,107 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cài Minecraft MTIEN</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #f5f5f5;
+            text-align: center;
+        }
+        .container {
+            background: white;
+            border-radius: 20px;
+            padding: 30px 20px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        h2 {
+            color: #2c3e50;
+            margin-top: 0;
+        }
+        .badge {
+            background: #28a745;
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            display: inline-block;
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+        .install-btn {
+            display: inline-block;
+            padding: 20px 40px;
+            background: #28a745;
+            color: white;
+            text-decoration: none;
+            font-size: 28px;
+            font-weight: bold;
+            border-radius: 16px;
+            margin: 20px 0;
+            transition: 0.3s;
+            box-shadow: 0 4px 6px rgba(40,167,69,0.3);
+        }
+        .install-btn:hover {
+            background: #218838;
+            transform: scale(1.05);
+        }
+        .warning {
+            background: #fff3cd;
+            color: #856404;
+            padding: 15px;
+            border-radius: 10px;
+            margin: 20px 0;
+            border-left: 5px solid #ffc107;
+            text-align: left;
+        }
+        .steps {
+            background: #e9ecef;
+            padding: 20px;
+            border-radius: 16px;
+            text-align: left;
+            margin-top: 20px;
+        }
+        .steps ol {
+            margin: 0;
+            padding-left: 20px;
+        }
+        .steps li {
+            margin: 10px 0;
+        }
+    </style>
 </head>
 <body>
-    <h2>⛏️ Minecraft MTIEN - Bản Doanh Nghiệp</h2>
-    <p><strong>✅ HSD: 1 năm (2026-2027)</strong></p>
-    
-    <a href="itms-services://?action=download-manifest&url=https://raw.githubusercontent.com/CoderNro/minecraft-oat/refs/heads/main/manifest.plist" 
-       style="display:inline-block; padding:20px 40px; background:#28a745; color:white; text-decoration:none; font-size:24px; border-radius:12px;">
-       📲 CÀI MINECRAFT NGAY
-    </a>
-    
-    <p style="margin-top:20px; color:red;">
-        ⚠️ Mở bằng Safari - KHÔNG dùng Facebook/Zalo/Chrome
-    </p>
-    
-    <p style="background:#f0f0f0; padding:15px; border-radius:8px;">
-        1. Bấm nút xanh → chọn "Cài đặt"<br>
-        2. Về màn hình chính đợi tải xong<br>
-        3. Vào Settings → Cài đặt chung → VPN & Quản lý thiết bị<br>
-        4. Chọn hồ sơ Doan Minh Tien → bấm "Tin cậy"<br>
-        5. Mở app và chơi
-    </p>
+    <div class="container">
+        <h2>⛏️ Minecraft MTIEN</h2>
+        <div class="badge">✅ Bản doanh nghiệp - HSD: 1 năm</div>
+        
+        <a href="itms-services://?action=download-manifest&url=https://raw.githubusercontent.com/CoderNro/minecraft-oat/refs/heads/main/manifest.plist" 
+           class="install-btn">
+           📲 CÀI ĐẶT NGAY
+        </a>
+        
+        <div class="warning">
+            <strong>⚠️ QUAN TRỌNG:</strong> Mở link này bằng <strong>SAFARI</strong> trên iPhone. 
+            Không dùng Facebook, Zalo, Chrome.
+        </div>
+        
+        <div class="steps">
+            <h3 style="margin-top:0; color:#2c3e50;">📋 Hướng dẫn chi tiết:</h3>
+            <ol>
+                <li><strong>Bấm nút "📲 CÀI ĐẶT NGAY"</strong> phía trên</li>
+                <li>Chọn <strong>"Cài đặt"</strong> khi popup hiện ra</li>
+                <li>Về màn hình chính, <strong>đợi app tải xong</strong> (icon màu xám)</li>
+                <li>Vào <strong>Cài đặt → Cài đặt chung → VPN & Quản lý thiết bị</strong></li>
+                <li>Chọn hồ sơ <strong>"Doan Minh Tien"</strong> → Bấm <strong>"Tin cậy"</strong></li>
+                <li>Xác nhận <strong>"Tin cậy"</strong> lần nữa</li>
+                <li><strong>Mở app và chơi! 🎮</strong></li>
+            </ol>
+        </div>
+        
+        <p style="color:#666; font-size:14px; margin-top:20px;">
+            Chứng chỉ hợp lệ đến: 2026-2027
+        </p>
+    </div>
 </body>
 </html>
